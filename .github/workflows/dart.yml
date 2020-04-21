@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  tests:
 
     runs-on: ubuntu-latest
 
@@ -23,4 +23,3 @@ jobs:
         cd flapp
         flutter pub get
         flutter test
-        flutter doctor
