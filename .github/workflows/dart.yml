@@ -19,7 +19,8 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '1.9.1+hotfix.6'
-    - run: cd flapp
-    - run: flutter pub get
+    - run: |
+        cd flapp
+        flutter pub get
     - run: flutter test
     - run: flutter build apk
