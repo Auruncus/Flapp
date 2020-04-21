@@ -22,5 +22,5 @@ jobs:
     - run: |
         cd flapp
         flutter pub get
-    - run: flutter test
-    - run: flutter build apk
+        flutter test
+        flutter build apk
