@@ -18,12 +18,14 @@ jobs:
         uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+        
       - name: Get packages in a Flutter project
         run: |
           cd flapp
           flutter pub get
       - name: Run lint
-        uses: kitek/dartanalyzer-annotations-action@v1  
+      - uses: subosito/flutter-action@v1
+      - uses: kitek/dartanalyzer-annotations-action@v1  
         env:
           GITHUB_TOKEN: ${{ github.token }}
     
