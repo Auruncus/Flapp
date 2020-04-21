@@ -23,10 +23,9 @@ jobs:
         run: |
           cd flapp
           flutter pub get
+      - uses: subosito/flutter-action@v1
       - name: Run lint
-        uses: 
-          subosito/flutter-action@v1
-          kitek/dartanalyzer-annotations-action@v1  
+        uses: kitek/dartanalyzer-annotations-action@v1  
         env:
           GITHUB_TOKEN: ${{ github.token }}
     
