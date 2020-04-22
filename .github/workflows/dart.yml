@@ -39,3 +39,24 @@ jobs:
         cd flapp
         flutter pub get
         flutter test
+  
+  docker:
+    
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v1
+     
+     - name: Docker version
+       run: docker -v
+     
+     - name: Docker build
+       run: |
+         docker build -t ${{ secrets.USERNAME }}/$PROJECT_NAME:ver_$GITHUB_RUN_NUMBER .
+         docker images
+     - name: Upload to docker hub
+       run: |
+         docker login --username=${{ secrets.DOCKER_LOGIN }} --password=${{ secrets.DOCKER_PASSWORD }}
+         docker push ${{ secrets.USERNAME }}/$PROJECT_NAME:ver_$GITHUB_RUN_NUMBER     
+    
+   
+  
