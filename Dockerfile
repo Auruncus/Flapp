@@ -8,5 +8,5 @@ ENV FLUTTER_HOME=${HOME}/sdks/flutter \
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
-RUN git clone https://github.com/flutter/flutter.git && \
+RUN git clone https://github.com/flutter/flutter.git && ls && cd flutter && \
     flutter doctor
