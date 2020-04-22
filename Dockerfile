@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+COPY . .
+
 ENV ANDROID_HOME="/opt/android-sdk" \
     PATH="/opt/android-sdk/tools/bin:/opt/flutter/bin:/opt/flutter/bin/cache/dart-sdk/bin:$PATH"
 
@@ -23,3 +25,4 @@ RUN mkdir ~/.android \
     && yes | sdkmanager --licenses > /dev/null \
     && flutter doctor -v \
     && chown -R root:root /opt
+    && ls
