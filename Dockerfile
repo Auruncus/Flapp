@@ -24,5 +24,5 @@ RUN mkdir ~/.android \
     && sdkmanager "tools" "build-tools;29.0.0" "platforms;android-29" "platform-tools" > /dev/null \
     && yes | sdkmanager --licenses > /dev/null \
     && flutter doctor -v \
-    && chown -R root:root /opt
+    && chown -R root:root /opt \
     && ls
