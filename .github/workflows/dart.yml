@@ -67,6 +67,8 @@ jobs:
       - run: |
           cd flapp
           flutter pub get
+          flutter channel master
+          flutter upgrade
           flutter config --enable-web
           flutter build web
 
